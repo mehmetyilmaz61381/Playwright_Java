@@ -1,0 +1,26 @@
+CMD
+
+mvn clean test
+
+cleans previous build results
+compiles and runs all @Test classes in src/test/java
+for running the full suite
+--
+
+mvn -Dtest=LoginTest test
+
+run a Specific Test Class
+LoginTest = class name (no .java)
+runs only LoginTest.java
+--
+
+mvn -Dtest=LoginTest#loginTest test
+
+run Specific Method in a Test Class
+Format: ClassName#methodName
+--
+
+mvn clean test -DsuiteXmlFile=testng.xml
+
+run Tests using testng.xml
+Good for running test groups, parallel tests, etc.
