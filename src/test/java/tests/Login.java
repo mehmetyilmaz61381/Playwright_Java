@@ -13,7 +13,7 @@ import pages.LoginPage;
 
 public class Login extends BaseTest {
 
-    @Ignore
+    @Test
     public void loginTest1() {
         LoginPage loginpage = new LoginPage(page);
         HomePage homepage = new HomePage(page);
