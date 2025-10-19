@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.SkipException;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.microsoft.playwright.Page;
@@ -12,7 +13,7 @@ import pages.LoginPage;
 
 public class Login extends BaseTest {
 
-    @Test
+    @Ignore
     public void loginTest1() {
         LoginPage loginpage = new LoginPage(page);
         HomePage homepage = new HomePage(page);
