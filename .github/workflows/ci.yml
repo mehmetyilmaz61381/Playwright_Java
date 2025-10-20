@@ -45,3 +45,25 @@ jobs:
         with:
           name: ExtentReports
           path: test-output/
+
+          
+      - name: Send test report via email
+      
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true 
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Java Playwright Test Raporu"
+          to: ${{ secrets.EMAIL_RECIPIENTS }}
+          from: ${{ secrets.EMAIL_USERNAME }}
+          body: | 
+             Hello Team,
+
+             The Java Playwright test run has been completed. The report is attached.
+
+             Best regards.
+          attachments: test-output/ExtentReports.html
