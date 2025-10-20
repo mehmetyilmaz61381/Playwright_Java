@@ -58,8 +58,9 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: "Java Playwright Test Raporu"
-          to: ${{ secrets.EMAIL_RECIPIENTS }}
           from: ${{ secrets.EMAIL_USERNAME }}
+          to: ${{ secrets.EMAIL_RECIPIENTS }}
+         
           body: | 
              Hello Team,
 
